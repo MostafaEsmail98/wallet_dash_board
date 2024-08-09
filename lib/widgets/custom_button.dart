@@ -20,11 +20,11 @@ class CustomButton extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12)),
                 elevation: 0,
-                backgroundColor: Colors.white),
+                backgroundColor: colorBox),
             onPressed: () {},
             child:  Text(
-              "Add more details",
-              style: AppStyles.textSemiBold18.copyWith(color: const Color(0xff4EB7F2)),
+              text,
+              style: AppStyles.textSemiBold18.copyWith(color:colorText),
             ),
           ),
         ),
