@@ -12,6 +12,7 @@ import 'package:wallet_dash_board/widgets/drawer.dart';
 import 'package:wallet_dash_board/widgets/quick_invoice.dart';
 import 'package:wallet_dash_board/widgets/quick_invoice_header.dart';
 import 'package:wallet_dash_board/widgets/transaction_header.dart';
+import 'package:wallet_dash_board/widgets/transaction_section.dart';
 import 'package:wallet_dash_board/widgets/user_info.dart';
 
 import '../models/user_info_model.dart';
@@ -22,7 +23,7 @@ class LayoutDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return const Row(
       children: [
         Expanded(
           flex: 2,
@@ -57,13 +58,7 @@ class LayoutDesktop extends StatelessWidget {
                   Divider(
                     height: 40,
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                    TransactionHeader(),
-                    SizedBox(height: 20,),
-                    Text("13 April 2022",style: AppStyles.textMedium16.copyWith(color: Color(0xffAAAAAA)),)
-                  ],)
+                  TransactionSection()
                 ],
               )),
             ))
@@ -71,3 +66,4 @@ class LayoutDesktop extends StatelessWidget {
     );
   }
 }
+
