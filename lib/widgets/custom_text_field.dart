@@ -16,13 +16,13 @@ class CustomTextField extends StatelessWidget {
         children: [
            Text(
             title,
-            style: AppStyles.textMedium16,
+            style: AppStyles.textMedium16(context),
           ),
           const SizedBox(height: 12,),
           TextField(
             decoration: InputDecoration(
               hintText: hint,
-                hintStyle: AppStyles.textRegular16.copyWith(color: const Color(0xffAAAAAA)),
+                hintStyle: AppStyles.textRegular16(context).copyWith(color: const Color(0xffAAAAAA)),
                 fillColor: const Color(0xffFAFAFA),
                 filled: true,
                 focusedBorder: OutlineInputBorder(

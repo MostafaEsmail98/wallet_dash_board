@@ -12,20 +12,27 @@ class ItemsOfSettingAndLogout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverFillRemaining(
+    return  SliverFillRemaining(
       hasScrollBody: false,
       child: Column(
         children: [
-          const Expanded(child: SizedBox()),
+           const Expanded(child: SizedBox()),
           ListTile(
-            title: const Text(
-              "Setting system",
-              style: AppStyles.textRegular16,
+            title:  FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "Setting system",
+                style: AppStyles.textRegular16(context),
+              ),
             ),
             leading: SvgPicture.asset(AppImages.setting),
           ),
-          ListTile(
-            title: const Text("Logout account", style: AppStyles.textRegular16),
+            ListTile(
+            title: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerLeft,
+                child: Text("Logout account", style: AppStyles.textRegular16(context))),
             leading: SvgPicture.asset(AppImages.logout),
           ),
           const SizedBox(

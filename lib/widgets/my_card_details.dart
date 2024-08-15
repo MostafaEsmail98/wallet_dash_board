@@ -15,32 +15,46 @@ class MyCardDetails extends StatelessWidget {
       children: [
         ListTile(
           contentPadding: EdgeInsets.zero,
-          title: Text(
-            "Name card",
-            style: AppStyles.textRegular16
+          title: FittedBox(
+            alignment: Alignment.centerLeft,
+            fit: BoxFit.scaleDown,
+            child: Text(
+              "Name card",
+              style: AppStyles.textRegular16(context)
+                  .copyWith(color: Colors.white),
+            ),
+          ),
+          subtitle: FittedBox(
+            alignment: Alignment.centerLeft,
+            fit: BoxFit.scaleDown,
+            child: Text(
+              cardDetailsModel.title,
+              style: AppStyles.textMedium20(context)
+                  .copyWith(color: Colors.white),
+            ),
+          ),
+          trailing:  FittedBox(
+              fit:BoxFit.scaleDown,child: Icon(cardDetailsModel.icon)),
+        ),
+         const Spacer(),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            cardDetailsModel.id,
+            style: AppStyles.textSemiBold24(context)
                 .copyWith(color: Colors.white),
           ),
-          subtitle: Text(
-            cardDetailsModel.title,
-            style: AppStyles.textMedium20
+        ),
+        FittedBox(
+           fit: BoxFit.scaleDown,
+          child: Text(
+            cardDetailsModel.date,
+            style: AppStyles.textRegular16(context)
                 .copyWith(color: Colors.white),
           ),
-          trailing:  Icon(cardDetailsModel.icon),
         ),
-        const Spacer(),
-        Text(
-          cardDetailsModel.id,
-          style: AppStyles.textSemiBold24
-              .copyWith(color: Colors.white),
-        ),
-        Text(
-          cardDetailsModel.date,
-          style: AppStyles.textRegular16
-              .copyWith(color: Colors.white),
-        ),
-        const SizedBox(
-          height: 27,
-        )
+
+
       ],
     );
   }

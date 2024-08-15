@@ -15,6 +15,18 @@ static const  List<TransactionModel> items = [
 
   @override
   Widget build(BuildContext context) {
+    return Column(
+      children: items.asMap().entries.map((e){
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 2.0),
+          child: Card(
+              elevation: 0,
+              color:const Color(0xffFAFAFA) ,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              child: TransactionItem(transactionModel: items[e.key],)),
+        );
+      }).toList(),
+    );
     return ListView.builder(
       itemCount: 3,
       shrinkWrap: true,

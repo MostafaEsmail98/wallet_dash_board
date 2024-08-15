@@ -1,3 +1,4 @@
+import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:wallet_dash_board/models/all_expenses_one_item_model.dart';
 import 'package:wallet_dash_board/utils/app_images.dart';
@@ -35,31 +36,32 @@ class _AllExpensesItemsState extends State<AllExpensesItems> {
   ];
 
   int active = 0;
+
   @override
   Widget build(BuildContext context) {
-    return Row(
-        children: itemModel.asMap().entries.map((e) {
-      int index = e.key;
-      var item = e.value;
-      return Expanded(
-          child: InkWell(
-        onTap: () {
-          if (index == 0) {
-            active = 0;
-            setState(() {});
-          } else if (index == 1) {
-            active = 1;
-            setState(() {});
-          } else {
-            active = 2;
-            setState(() {});
-          }
-        },
-        child: AllExpensesOneItem(
-          allExpensesOneItemModel: item,
-          active: active,
-        ),
-      ));
-    }).toList());
+    return  Row(
+            children: itemModel.asMap().entries.map((e) {
+            int index = e.key;
+            var item = e.value;
+            return Expanded(
+                child: InkWell(
+              onTap: () {
+                if (index == 0) {
+                  active = 0;
+                  setState(() {});
+                } else if (index == 1) {
+                  active = 1;
+                  setState(() {});
+                } else {
+                  active = 2;
+                  setState(() {});
+                }
+              },
+              child: AllExpensesOneItem(
+                allExpensesOneItemModel: item,
+                active: active,
+              ),
+            ));
+          }).toList());
   }
 }

@@ -19,49 +19,63 @@ class LayoutDesktop extends StatelessWidget {
           flex: 2,
           child: DrawerDashBoard(),
         ),
-        Expanded(
-            flex: 4,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 40.0),
-                    child: CustomContainer(
-                      child: AllExpenses(),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 24,
-                  ),
-                  QuickInvoice(),
-                ],
-              ),
-            )),
-        Expanded(
-            flex: 3,
-            child: Padding(
-              padding: EdgeInsets.only(top: 40.0, left: 24),
-              child: SingleChildScrollView(
+      Expanded(
+          flex: 8,
+          child:
+      CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+          hasScrollBody: false,
+          fillOverscroll: true,
+          child: Row(
+            children: [
+              Expanded(
+                flex: 5,
                 child: Column(
                   children: [
-                    CustomContainer(
-                        child: Column(
-                      children: [
-                        MyCardSection(),
-                        Divider(
-                          height: 40,
-                        ),
-                        TransactionSection()
-                      ],
-                    )),
+                    Padding(
+                      padding: EdgeInsets.only(top: 40.0),
+                      child: CustomContainer(
+                        child: AllExpenses(),
+                      ),
+                    ),
                     SizedBox(
                       height: 24,
                     ),
-                    IncomeSection()
+                    QuickInvoice(),
                   ],
                 ),
               ),
-            ))
+              Expanded(
+                flex: 3,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 40.0, left: 24,right: 24),
+                  child: Column(
+                    children: [
+                      CustomContainer(
+                          child: Column(
+                            children: [
+                              MyCardSection(),
+                              Divider(
+                                height: 40,
+                              ),
+                              TransactionSection()
+                            ],
+                          )),
+                      SizedBox(
+                        height: 24,
+                      ),
+                      Expanded(child: IncomeSection()),
+                    ],
+                  ),
+                ),
+              ) ,
+            ],
+          ),
+            ),
+
+        ]
+      ))
       ],
     );
   }

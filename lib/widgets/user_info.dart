@@ -14,8 +14,14 @@ class UserInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: SvgPicture.asset(userInfoModel.image),
-      title:  Text(userInfoModel.title,style: AppStyles.textSemiBold16,),
-      subtitle:  Text(userInfoModel.subTitle,style: AppStyles.textRegular12,),
+      title:  FittedBox(
+        fit: BoxFit.scaleDown,
+          alignment: Alignment.centerLeft,
+          child: Text(userInfoModel.title,style: AppStyles.textSemiBold16(context),)),
+      subtitle:  FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.centerLeft,
+          child: Text(userInfoModel.subTitle,style: AppStyles.textRegular12(context),)),
 
     );
   }

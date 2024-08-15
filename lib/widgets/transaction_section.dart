@@ -13,17 +13,17 @@ class TransactionSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TransactionHeader(),
-        SizedBox(
+        const TransactionHeader(),
+        const SizedBox(
           height: 20,
         ),
         Text(
           "13 April 2022",
-          style: AppStyles.textMedium16
-              .copyWith(color: Color(0xffAAAAAA)),
+          style: AppStyles.textMedium16(context)
+              .copyWith(color: const Color(0xffAAAAAA)),
         ),
-        SizedBox(height: 16,),
-        TransactionListView()
+        const SizedBox(height: 16,),
+        const TransactionListView()
 
       ],
     );
