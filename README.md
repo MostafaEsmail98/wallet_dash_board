@@ -1,16 +1,11 @@
-# wallet_dash_board
+# Wallet Dashboard
 
-A new Flutter project.
+## 📱 Introduction
+The Wallet Dashboard is a Flutter application designed for managing financial portfolios. The app is responsive and works seamlessly on all screen sizes, providing a user-friendly experience.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Features
+- Responsive design that works on all screen sizes.
+- Simple and easy-to-use interface.
+- Quick overview of the financial portfolio status.
+- Ability to add, edit, and delete transactions.
+- Analytics for transactions.
